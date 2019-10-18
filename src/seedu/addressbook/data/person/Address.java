@@ -11,10 +11,6 @@ public class Address {
     public static final String EXAMPLE = "123, some street";
     public static final String MESSAGE_ADDRESS_CONSTRAINTS = "Person addresses can be in any format";
     public static final String ADDRESS_VALIDATION_REGEX = ".+";
-    public static final String block;
-    public static final String street;
-    public static final String unit;
-    public static final String postalCode;
 
     public final String value;
     private boolean isPrivate;
@@ -25,7 +21,7 @@ public class Address {
      * @throws IllegalValueException if given address string is invalid.
      */
     public Address(String block = null, String street = null, String unit = null, String postalCode = null, boolean isPrivate) throws IllegalValueException {
-        adress = block + ', ' + street +  ', ' + unit + ', ' + postalCode;
+        String adress = block + ', ' + street +  ', ' + unit + ', ' + postalCode;
         String trimmedAddress = address.trim();
         this.isPrivate = isPrivate;
         if (!isValidAddress(trimmedAddress)) {
