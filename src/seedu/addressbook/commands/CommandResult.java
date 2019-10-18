@@ -37,8 +37,7 @@ public class CommandResult {
         return feedbackToUser;
     }
 
-    public void setFeedbackToUser (String data) {
-        feedbackToUser = data;
+    public void setFeedbackToUser (String value) {
+        feedbackToUser = value;
     }
-
 }
