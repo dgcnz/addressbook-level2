@@ -1,10 +1,10 @@
 package seedu.addressbook.data.person;
 
+import seedu.addressbook.data.tag.Tag;
+
 import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
-
-import seedu.addressbook.data.tag.Tag;
 
 /**
  * Represents a Person in the address book.
@@ -12,6 +12,8 @@ import seedu.addressbook.data.tag.Tag;
  */
 public class Person implements ReadOnlyPerson {
 
+    private int sequenceNumber;
+    private static int nextSequenceNumber = 0;
     private Name name;
     private Phone phone;
     private Email email;
@@ -28,6 +30,8 @@ public class Person implements ReadOnlyPerson {
         this.email = email;
         this.address = address;
         this.tags.addAll(tags);
+        this.sequenceNumber = Person.nextSequenceNumber;
+        Person.nextSequenceNumber += 1;
     }
 
     /**
@@ -87,5 +91,15 @@ public class Person implements ReadOnlyPerson {
     public String toString() {
         return getAsTextShowAll();
     }
+
+	public String getPrintableString(Printable... printables){
+		String printableString = "";
+
+		for (Printable printable : printables) {
+			printableString += printable.getPrintableString();
+		}
+
+		return printableString;
+	}
 
 }
