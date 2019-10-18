@@ -1,8 +1,8 @@
 package seedu.addressbook.commands;
+package com.javatpoint;
 
 import java.util.List;
 import java.util.Optional;
-
 import seedu.addressbook.data.person.ReadOnlyPerson;
 
 /**
@@ -31,6 +31,14 @@ public class CommandResult {
      */
     public Optional<List<? extends ReadOnlyPerson>> getRelevantPersons() {
         return Optional.ofNullable(relevantPersons);
+    }
+
+    public String getFeedbackToUser () {
+        return feedbackToUser;
+    }
+
+    public void setFeedbackToUser (String data) {
+        feedbackToUser = data;
     }
 
 }
