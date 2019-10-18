@@ -14,6 +14,7 @@ import seedu.addressbook.storage.StorageFile;
 import seedu.addressbook.storage.StorageFile.InvalidStorageFilePathException;
 import seedu.addressbook.storage.StorageFile.StorageOperationException;
 import seedu.addressbook.ui.TextUi;
+import seedu.addressbook.commands.ListCommand;
 
 
 /**
@@ -84,9 +85,17 @@ public class Main {
         do {
             String userCommandText = ui.getUserCommand();
             command = new Parser().parseCommand(userCommandText);
+            // if command is successful add or delete, also execute ListCommand
             CommandResult result = executeCommand(command);
             recordResult(result);
             ui.showResultToUser(result);
+
+            if (command instanceof AddCommand || command instanceof DeleteCommand) {
+                Command list_command;
+                list_command = new ListCommand();
+                CommandResult list_result = executeCommand(list_command);
+                ui.showResultToUser(result);
+            }
 
         } while (!ExitCommand.isExit(command));
     }

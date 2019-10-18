@@ -78,4 +78,20 @@ public class AddressBook {
                 || (other instanceof AddressBook // instanceof handles nulls
                         && this.allPersons.equals(((AddressBook) other).allPersons));
     }
+
+    public void addTag(Tag tag, Person person) {
+        Tagging tagging = new Tagging(tag, person, "+");
+        this.taggings.add(tagging);
+    }
+
+    public void deleteTag(Tag tag, Person person) {
+        Tagging tagging = new Tagging(tag, person, "-");
+        this.taggings.add(tagging);
+    }
+
+    public void exit() {
+        for (int i = 0; i < this.taggings.size(); i++) {
+            System.out.println(this.taggings.get(i).toString());
+        }
+    }
 }
