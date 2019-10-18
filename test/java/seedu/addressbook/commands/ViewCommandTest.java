@@ -1,25 +1,19 @@
-package seedu.addressbook.commands;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
-import java.util.Optional;
+package java.seedu.addressbook.commands;
 
 import org.junit.jupiter.api.Test;
-
+import seedu.addressbook.commands.Command;
+import seedu.addressbook.commands.CommandResult;
+import seedu.addressbook.commands.ViewAllCommand;
+import seedu.addressbook.commands.ViewCommand;
 import seedu.addressbook.common.Messages;
 import seedu.addressbook.data.AddressBook;
-import seedu.addressbook.data.person.Address;
-import seedu.addressbook.data.person.Email;
-import seedu.addressbook.data.person.Name;
-import seedu.addressbook.data.person.Person;
-import seedu.addressbook.data.person.Phone;
-import seedu.addressbook.data.person.ReadOnlyPerson;
-import seedu.addressbook.util.TestUtil;
+import seedu.addressbook.data.person.*;
 import seedu.addressbook.util.TypicalPersons;
+
+import java.seedu.addressbook.util.TestUtil;
+import java.util.*;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class ViewCommandTest {
     private TypicalPersons td = new TypicalPersons();

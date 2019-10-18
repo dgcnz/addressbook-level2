@@ -1,19 +1,17 @@
-package seedu.addressbook.commands;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+package java.seedu.addressbook.commands;
 
 import org.junit.jupiter.api.Test;
-
+import seedu.addressbook.commands.Command;
+import seedu.addressbook.commands.CommandResult;
+import seedu.addressbook.commands.FindCommand;
 import seedu.addressbook.data.AddressBook;
 import seedu.addressbook.data.exception.IllegalValueException;
 import seedu.addressbook.data.person.ReadOnlyPerson;
 import seedu.addressbook.util.TypicalPersons;
+
+import java.util.*;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class FindCommandTest {
 
