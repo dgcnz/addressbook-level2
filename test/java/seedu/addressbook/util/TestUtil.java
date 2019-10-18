@@ -1,8 +1,9 @@
-package seedu.addressbook.util;
+package java.seedu.addressbook.util;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
-import static org.junit.jupiter.api.Assertions.fail;
+import seedu.addressbook.data.AddressBook;
+import seedu.addressbook.data.exception.IllegalValueException;
+import seedu.addressbook.data.person.*;
+import seedu.addressbook.data.person.UniquePersonList.DuplicatePersonException;
 
 import java.io.IOException;
 import java.nio.charset.Charset;
@@ -14,15 +15,7 @@ import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 
-import seedu.addressbook.data.AddressBook;
-import seedu.addressbook.data.exception.IllegalValueException;
-import seedu.addressbook.data.person.Address;
-import seedu.addressbook.data.person.Email;
-import seedu.addressbook.data.person.Name;
-import seedu.addressbook.data.person.Person;
-import seedu.addressbook.data.person.Phone;
-import seedu.addressbook.data.person.ReadOnlyPerson;
-import seedu.addressbook.data.person.UniquePersonList.DuplicatePersonException;
+import static org.junit.jupiter.api.Assertions.*;
 
 /**
  * Utility methods for testing.
