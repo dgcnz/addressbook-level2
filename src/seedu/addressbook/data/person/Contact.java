@@ -1,19 +1,14 @@
 package seedu.addressbook.data.person;
 
-import seedu.addressbook.data.exception.IllegalValueException;
-
 /**
  * Represents a Person's email in the address book.
  * Guarantees: immutable; is valid as declared in {@link #isValidEmail(String)}
  */
-public class Contact{
+public abstract class Contact{
 
-    public final String value;
-    private boolean isPrivate;
+    public String value;
+    protected boolean isPrivate;
 
-    public static boolean isValid(String test) {
-        return test.matches(VALIDATION_REGEX);
-    }
 
     @Override
     public String toString() {

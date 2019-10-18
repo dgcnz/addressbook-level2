@@ -1,7 +1,7 @@
 package seedu.addressbook.data.person;
 
-interface Name {
+public interface Printable {
 
-	public String getPrintableString();
+	String getPrintableString();
 }
 

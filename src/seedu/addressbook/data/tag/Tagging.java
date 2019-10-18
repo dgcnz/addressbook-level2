@@ -1,4 +1,6 @@
-package java.seedu.addressbook.data.tag;
+package seedu.addressbook.data.tag;
+
+import seedu.addressbook.data.person.Person;
 
 public class Tagging {
     Tag tag; 

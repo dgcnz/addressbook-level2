@@ -1,10 +1,10 @@
 package seedu.addressbook.data.person;
 
+import seedu.addressbook.data.tag.Tag;
+
 import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
-
-import seedu.addressbook.data.tag.Tag;
 
 /**
  * Represents a Person in the address book.
@@ -95,7 +95,7 @@ public class Person implements ReadOnlyPerson {
 	public String getPrintableString(Printable... printables){
 		String printableString = "";
 
-		for (String printable : printables) {
+		for (Printable printable : printables) {
 			printableString += printable.getPrintableString();
 		}
 
