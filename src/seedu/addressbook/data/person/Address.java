@@ -18,8 +18,17 @@ public class Address extends Contact implements Printable {
      *
      * @throws IllegalValueException if given address string is invalid.
      */
-    public Address(String block , String street, String unit, String postalCode) throws IllegalValueException {
+    public Address(String block , String street, String unit, String postalCode, Boolean isPrivate) throws IllegalValueException {
         String address = block + ", " + street +  ", " + unit + ", " + postalCode;
+        String trimmedAddress = address.trim();
+        this.isPrivate = isPrivate;
+        if (!isValidAddress(trimmedAddress)) {
+            throw new IllegalValueException(MESSAGE_ADDRESS_CONSTRAINTS);
+        }
+        this.value = trimmedAddress;
+    }
+
+    public Address(String address, boolean isPrivate)  throws IllegalValueException {
         String trimmedAddress = address.trim();
         this.isPrivate = isPrivate;
         if (!isValidAddress(trimmedAddress)) {
