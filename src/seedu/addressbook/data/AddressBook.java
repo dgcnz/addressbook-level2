@@ -1,10 +1,14 @@
 package seedu.addressbook.data;
 
+import seedu.addressbook.data.person.UniquePersonList;
+
 import seedu.addressbook.data.person.Person;
 import seedu.addressbook.data.person.ReadOnlyPerson;
-import seedu.addressbook.data.person.UniquePersonList;
 import seedu.addressbook.data.person.UniquePersonList.DuplicatePersonException;
 import seedu.addressbook.data.person.UniquePersonList.PersonNotFoundException;
+import seedu.addressbook.data.tag.Tag;
+import seedu.addressbook.data.tag.Tagging;
+import java.util.List;
 
 /**
  * Represents the entire address book. Contains the data of the address book.
@@ -12,6 +16,7 @@ import seedu.addressbook.data.person.UniquePersonList.PersonNotFoundException;
 public class AddressBook {
 
     private final UniquePersonList allPersons;
+    private List<Tagging> taggings;
 
     /**
      * Creates an empty address book.
@@ -73,5 +78,21 @@ public class AddressBook {
         return other == this // short circuit if same object
                 || (other instanceof AddressBook // instanceof handles nulls
                         && this.allPersons.equals(((AddressBook) other).allPersons));
+    }
+
+    public void addTag(Tag tag, Person person) {
+        Tagging tagging = new Tagging(tag, person, "+");
+        this.taggings.add(tagging);
+    }
+
+    public void deleteTag(Tag tag, Person person) {
+        Tagging tagging = new Tagging(tag, person, "-");
+        this.taggings.add(tagging);
+    }
+
+    public void exit() {
+        for (int i = 0; i < this.taggings.size(); i++) {
+            System.out.println(this.taggings.get(i).toString());
+        }
     }
 }

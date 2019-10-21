@@ -1,9 +1,13 @@
-package seedu.addressbook.storage;
+package java.seedu.addressbook.storage;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertThrows;
-import static seedu.addressbook.util.TestUtil.assertFileDoesNotExist;
-import static seedu.addressbook.util.TestUtil.assertTextFilesEqual;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.io.TempDir;
+import seedu.addressbook.data.AddressBook;
+import seedu.addressbook.data.exception.IllegalValueException;
+import seedu.addressbook.data.person.*;
+import seedu.addressbook.data.tag.Tag;
+import seedu.addressbook.storage.StorageFile;
+import seedu.addressbook.storage.StorageFile.StorageOperationException;
 
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -11,18 +15,10 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashSet;
 
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.io.TempDir;
-
-import seedu.addressbook.data.AddressBook;
-import seedu.addressbook.data.exception.IllegalValueException;
-import seedu.addressbook.data.person.Address;
-import seedu.addressbook.data.person.Email;
-import seedu.addressbook.data.person.Name;
-import seedu.addressbook.data.person.Person;
-import seedu.addressbook.data.person.Phone;
-import seedu.addressbook.data.tag.Tag;
-import seedu.addressbook.storage.StorageFile.StorageOperationException;
+import static java.seedu.addressbook.util.TestUtil.assertFileDoesNotExist;
+import static java.seedu.addressbook.util.TestUtil.assertTextFilesEqual;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class StorageFileTest {
     @TempDir
